@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<dimen name="books_toolbar_elevation">4dp</dimen>
+	<dimen name = "books_listitem_height">96dp</dimen>
+	<dimen name = "books_listitem_footer_height">48dp</dimen>
+	<dimen name = "books_listitem_margin_horizontal">8dp</dimen>
+	<dimen name = "books_listitem_textsize_title">20sp</dimen>
+	<dimen name = "books_listitem_textsize_author">14sp</dimen>
+	<dimen name = "books_listitem_textsize_year">12sp</dimen>
+	<dimen name = "books_progressbar_circle_diameter">48dp</dimen>
+
+</resources>

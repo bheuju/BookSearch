@@ -1,0 +1,48 @@
+<resources xmlns:tools = "http://schemas.android.com/tools">
+
+	<!-- Base application theme. -->
+	<style name = "AppTheme" parent = "Theme.AppCompat.Light.NoActionBar">
+		<item name = "colorPrimary">@color/colorPrimary</item>
+		<item name = "colorPrimaryDark">@color/colorPrimaryDark</item>
+		<item name = "colorAccent">@color/colorAccent</item>
+		<item name = "android:textColorPrimary">@color/colorTextPrimary</item>
+		<item name = "android:textColorSecondary">@color/colorTextSecondary</item>
+	</style>
+
+	<!--Theme for Toolbars across the whole app-->
+	<style name = "AppToolbarTheme" parent = "ThemeOverlay.AppCompat.Dark">
+		<item name = "android:layout_height">wrap_content</item>
+		<item name = "android:layout_width">match_parent</item>
+		<item name = "android:elevation" tools:targetApi = "21">
+			@dimen/books_toolbar_elevation
+		</item>
+		<item name = "theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+		<item name = "android:background">@color/colorPrimary</item>
+		<item name = "titleTextColor">@color/colorToolbarTitle</item>
+		<item name = "colorControlNormal">@color/colorToolbarTitle</item>
+		<item name = "layout_constraintTop_toTopOf">parent</item>
+	</style>
+
+	<!--Books Activity-->
+	<style name = "BooksContextualMessages">
+		<item name = "android:visibility">gone</item>
+		<item name = "layout_constraintBottom_toBottomOf">parent</item>
+		<item name = "layout_constraintEnd_toEndOf">parent</item>
+		<item name = "layout_constraintStart_toStartOf">parent</item>
+		<item name = "layout_constraintTop_toBottomOf">@id/books_toolbar</item>
+	</style>
+	<style name = "BooksContextualMessages.Text">
+		<item name = "android:layout_width">0dp</item>
+		<item name = "android:layout_height">0dp</item>
+		<item name = "android:gravity">center</item>
+	</style>
+	<style name = "BooksListItemText">
+		<item name = "android:layout_width">0dp</item>
+		<item name = "android:layout_height">wrap_content</item>
+		<item name = "android:paddingEnd">@dimen/books_listitem_margin_horizontal</item>
+		<item name = "android:paddingStart">@dimen/books_listitem_margin_horizontal</item>
+		<item name = "android:ellipsize">end</item>
+		<item name = "android:maxLines">1</item>
+	</style>
+
+</resources>
