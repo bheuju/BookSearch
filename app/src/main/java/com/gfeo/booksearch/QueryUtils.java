@@ -34,7 +34,7 @@ class QueryUtils {
 	/** An integer to hold the number of search results */
 	static int numberOfResults;
 	/** A String to hold the maxResults preference value */
-	static int maxResultsValue;
+	static Integer maxResultsValue;
 	/** A String to hold the maxResults preference key */
 	private static String maxResultsKey;
 	/** A String to hold the orderBy preference key */
