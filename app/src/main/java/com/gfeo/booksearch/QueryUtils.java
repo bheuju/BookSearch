@@ -22,8 +22,7 @@ import java.util.ArrayList;
 
 /**
  * Utility class for querying the <a
- * href="https://developers.google.com/books/docs/overview">Google
- * Books API</a>.
+ * href="https://developers.google.com/books/docs/overview">Google Books API</a>.
  *
  * @author gabrielfeo
  */
@@ -33,17 +32,47 @@ class QueryUtils {
 	private final static String LOG_TAG = QueryUtils.class.getSimpleName();
 	/** An integer to hold the number of search results */
 	static int numberOfResults;
-	/** A Integer to hold the maxResults preference value */
+	/**
+	 * A Integer object to hold the maxResults preference value
+	 *
+	 * @see QueryUtils#getPreferences(Context)
+	 * @see QueryUtils#buildQueryUrl(String)
+	 */
 	static Integer maxResultsValue;
-	/** A String to hold the maxResults preference key */
+	/**
+	 * A String to hold the maxResults preference key
+	 *
+	 * @see QueryUtils#getPreferences(Context)
+	 * @see QueryUtils#buildQueryUrl(String)
+	 */
 	private static String maxResultsKey;
-	/** A String to hold the orderBy preference key */
+	/**
+	 * A String to hold the orderBy preference key
+	 *
+	 * @see QueryUtils#getPreferences(Context)
+	 * @see QueryUtils#buildQueryUrl(String)
+	 */
 	private static String orderByKey;
-	/** A String to hold the orderBy preference value */
+	/**
+	 * A String to hold the orderBy preference value
+	 *
+	 * @see QueryUtils#getPreferences(Context)
+	 * @see QueryUtils#buildQueryUrl(String)
+	 */
 	private static String orderByValue;
-	/** A String to hold the langRestrict preference key */
+	/**
+	 * A String to hold the langRestrict preference key
+	 *
+	 * @see QueryUtils#getPreferences(Context)
+	 * @see QueryUtils#buildQueryUrl(String)
+	 */
 	private static String langRestrictKey;
-	/** A String to hold the langRestrict preference value */
+	/**
+	 * A String to hold the langRestrict preference value
+	 *
+	 * @see QueryUtils#getPreferences(Context)
+	 * @see QueryUtils#buildQueryUrl(String)
+	 */
 	private static String langRestrictValue;
 
 	/**
@@ -58,16 +87,16 @@ class QueryUtils {
 	 *                    {@link android.support.v7.widget.SearchView}
 	 * @return the built query {@link URL}
 	 */
-	static URL buildQueryUrl(String searchQuery){
+	static URL buildQueryUrl(String searchQuery) {
 		Uri.Builder uriBuilder = new Uri.Builder();
 		uriBuilder.scheme("https")
-	              .authority("www.googleapis.com")
-	              .appendPath("books").appendPath("v1").appendPath("volumes")
-	              .appendQueryParameter("q", searchQuery)
-	              .appendQueryParameter(maxResultsKey, maxResultsValue.toString())
-	              .appendQueryParameter(orderByKey,orderByValue);
-		if (!langRestrictValue.equals("none")){
-			uriBuilder.appendQueryParameter(langRestrictKey,langRestrictValue);
+		          .authority("www.googleapis.com")
+		          .appendPath("books").appendPath("v1").appendPath("volumes")
+		          .appendQueryParameter("q", searchQuery)
+		          .appendQueryParameter(maxResultsKey, maxResultsValue.toString())
+		          .appendQueryParameter(orderByKey, orderByValue);
+		if (!langRestrictValue.equals("none")) {
+			uriBuilder.appendQueryParameter(langRestrictKey, langRestrictValue);
 		}
 		return createUrl(uriBuilder.toString());
 	}
