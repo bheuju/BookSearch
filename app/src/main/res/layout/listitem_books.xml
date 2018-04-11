@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--List item of the BooksActivity ListView-->
+
+<android.support.constraint.ConstraintLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+	xmlns:app = "http://schemas.android.com/apk/res-auto"
+	android:layout_width = "match_parent"
+	android:layout_height = "@dimen/books_listitem_height">
+
+	<ImageView
+		android:id = "@+id/books_listitem_imageview"
+		android:layout_width = "0dp"
+		android:layout_height = "0dp"
+		app:layout_constraintBottom_toBottomOf = "parent"
+		app:layout_constraintDimensionRatio = "4:5.5"
+		app:layout_constraintStart_toStartOf = "parent"
+		app:layout_constraintTop_toTopOf = "parent" />
+
+	<TextView
+		android:id = "@+id/books_listitem_textview_year"
+		style = "@style/BooksListItemText"
+		android:textAppearance = "@style/Base.TextAppearance.AppCompat.Small"
+		android:textColor = "@color/colorBookYear"
+		android:textSize = "@dimen/books_listitem_textsize_year"
+		app:layout_constraintBottom_toTopOf = "@id/books_listitem_textview_title"
+		app:layout_constraintEnd_toEndOf = "parent"
+		app:layout_constraintStart_toEndOf = "@id/books_listitem_imageview"
+		app:layout_constraintTop_toTopOf = "parent"
+		app:layout_constraintVertical_chainStyle = "packed" />
+
+	<TextView
+		android:id = "@+id/books_listitem_textview_title"
+		style = "@style/BooksListItemText"
+		android:textColor = "@color/colorBookTitle"
+		android:textSize = "@dimen/books_listitem_textsize_title"
+		app:layout_constraintBottom_toTopOf = "@id/books_listitem_textview_author"
+		app:layout_constraintEnd_toEndOf = "parent"
+		app:layout_constraintStart_toStartOf = "@id/books_listitem_textview_year"
+		app:layout_constraintTop_toBottomOf = "@id/books_listitem_textview_year" />
+
+	<TextView
+		android:id = "@+id/books_listitem_textview_author"
+		style = "@style/BooksListItemText"
+		android:textSize = "@dimen/books_listitem_textsize_author"
+		app:layout_constraintBottom_toBottomOf = "parent"
+		app:layout_constraintEnd_toEndOf = "parent"
+		app:layout_constraintStart_toStartOf = "@id/books_listitem_textview_year"
+		app:layout_constraintTop_toBottomOf = "@id/books_listitem_textview_title" />
+
+</android.support.constraint.ConstraintLayout>

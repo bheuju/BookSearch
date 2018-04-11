@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Menu items for the BooksActivity Toolbar
+	See activity_books.xml-->
+
+<menu xmlns:android = "http://schemas.android.com/apk/res/android"
+	xmlns:app = "http://schemas.android.com/apk/res-auto">
+
+	<item
+		android:id = "@+id/books_toolbarmenuitem_search"
+		android:icon = "@drawable/ic_search_white_24dp"
+		android:orderInCategory = "1"
+		android:title = "@string/books_toolbarmenuitem_search"
+		app:actionViewClass = "android.support.v7.widget.SearchView"
+		app:showAsAction = "always|collapseActionView" />
+
+	<item
+		android:id = "@+id/books_toolbarmenuitem_preferences"
+		android:icon = "@drawable/ic_settings_white_24dp"
+		android:orderInCategory = "2"
+		android:title = "@string/books_toolbarmenuitem_preferences"
+		app:showAsAction = "ifRoom" />
+
+</menu>

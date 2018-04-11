@@ -1,0 +1,34 @@
+<resources>
+	<string name = "app_name">Book Search</string>
+
+	<!--Books Activity-->
+	<string name = "books_toolbarmenuitem_search">Search</string>
+	<string name = "books_toolbarmenuitem_preferences">Preferences</string>
+	<string name = "books_listitem_footer">The full list of books could not be loaded</string>
+
+	<!--Placeholder and error views-->
+	<string name = "books_instructions">Use the <i>Search</i> button to start</string>
+	<string name = "books_no_books_found">No books found</string>
+	<string name = "books_no_internet">You are not connected to the internet\n
+		Please try again later </string>
+
+	<!--Toast messages-->
+	<string name = "books_toast_no_info_page">Information page not available</string>
+	<string name = "books_toast_http_response_code">The search results could not be
+		retrieved due to a connection error</string>
+
+	<!--Preferences: a title, summary, key and default value for each-->
+	<string name = "preferences_maxresults_title">Maximum number of results</string>
+	<string name = "preferences_maxresults_summary">A number from 1 to 40</string>
+	<string name = "preferences_maxresults_key" translatable="false">maxResults</string>
+	<string name = "preferences_maxresults_default" translatable="false">20</string>
+	<string name = "preferences_orderby_title">Results sorting criterion</string>
+	<string name = "preferences_orderby_summary">
+		Sort results by relevance or published date</string>
+	<string name = "preferences_orderby_key" translatable="false">orderBy</string>
+	<string name = "preferences_orderby_default" translatable="false">relevance</string>
+	<string name = "preferences_langrestrict_title">Language restriction</string>
+	<string name = "preferences_langrestrict_summary">Filter results to a specific language</string>
+	<string name = "preferences_langrestrict_key" translatable="false">langRestrict</string>
+	<string name = "preferences_langrestrict_default" translatable="false">none</string>
+</resources>

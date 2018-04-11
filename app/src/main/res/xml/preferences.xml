@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android = "http://schemas.android.com/apk/res/android">
+
+	<EditTextPreference
+		android:defaultValue = "@string/preferences_maxresults_default"
+		android:inputType = "number"
+		android:key = "@string/preferences_maxresults_key"
+		android:selectAllOnFocus = "true"
+		android:summary = "@string/preferences_maxresults_summary"
+		android:title = "@string/preferences_maxresults_title" />
+
+	<ListPreference
+		android:defaultValue = "@string/preferences_orderby_default"
+		android:entries = "@array/preferences_orderby_entry_names"
+		android:entryValues = "@array/preferences_orderby_entry_values"
+		android:key = "@string/preferences_orderby_key"
+		android:summary = "@string/preferences_orderby_summary"
+		android:title = "@string/preferences_orderby_title" />
+
+	<ListPreference
+		android:defaultValue = "@string/preferences_langrestrict_default"
+		android:entries = "@array/preferences_langrestrict_entry_names"
+		android:entryValues = "@array/preferences_langrestrict_entry_values"
+		android:key = "@string/preferences_langrestrict_key"
+		android:summary = "@string/preferences_langrestrict_summary"
+		android:title = "@string/preferences_langrestrict_title" />
+
+</PreferenceScreen>

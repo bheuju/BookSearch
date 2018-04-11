@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+	xmlns:app = "http://schemas.android.com/apk/res-auto"
+	xmlns:tools = "http://schemas.android.com/tools"
+	android:layout_width = "match_parent"
+	android:layout_height = "match_parent"
+	tools:context = "com.gfeo.booksearch.BooksActivity">
+
+	<android.support.v7.widget.Toolbar
+		android:id = "@+id/books_toolbar"
+		style = "@style/AppToolbarTheme"
+		app:layout_constraintBottom_toTopOf = "@id/books_listview" />
+
+	<ListView
+		android:id = "@+id/books_listview"
+		android:layout_width = "match_parent"
+		android:layout_height = "0dp"
+		app:layout_constraintBottom_toBottomOf = "parent"
+		app:layout_constraintTop_toBottomOf = "@id/books_toolbar" />
+
+	<TextView
+		android:id = "@+id/books_textview_instructions"
+		android:text = "@string/books_instructions"
+		style="@style/BooksContextualMessages.Text" />
+
+	<ProgressBar
+		android:id = "@+id/books_progressbar"
+		android:layout_width = "@dimen/books_progressbar_circle_diameter"
+		android:layout_height = "@dimen/books_progressbar_circle_diameter"
+		style="@style/BooksContextualMessages"/>
+
+	<TextView
+		android:id = "@+id/books_textview_no_books_found"
+		android:text = "@string/books_no_books_found"
+		style="@style/BooksContextualMessages.Text" />
+
+	<TextView
+		android:id = "@+id/books_textview_no_internet"
+		android:text = "@string/books_no_internet"
+		style="@style/BooksContextualMessages.Text" />
+
+</android.support.constraint.ConstraintLayout>
