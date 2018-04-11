@@ -2,6 +2,7 @@ package com.gfeo.booksearch;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
@@ -33,7 +34,7 @@ class QueryUtils {
 	private final static String LOG_TAG = QueryUtils.class.getSimpleName();
 	/** An integer to hold the number of search results */
 	static int numberOfResults;
-	/** A String to hold the maxResults preference value */
+	/** A Integer to hold the maxResults preference value */
 	static Integer maxResultsValue;
 	/** A String to hold the maxResults preference key */
 	private static String maxResultsKey;
@@ -47,47 +48,29 @@ class QueryUtils {
 	private static String langRestrictValue;
 
 	/**
-	 * <p>Builds the query URL using a {@link StringBuilder} and the
+	 * <p>Builds the query URL using a {@link Uri.Builder} and the
 	 * {@link QueryUtils#createUrl(String)} method.</p>
-	 * <p>The {@code StringBuilder} appends to the starting {@code URL} the UTF-8 encoded search
-	 * query and the key and value of the {@code maxResults}, {@code orderBy} and {@code
-	 * langRestrict} according to the user preferences. </p>
+	 * <p>The {@code Uri.Builder} appends to the Uri as parameters the query inputted by the user
+	 * (properly encoded) and the key and value of the {@code maxResults}, {@code orderBy} and
+	 * {@code langRestrict} according to the user preferences. </p>
 	 *
 	 * @param searchQuery a String holding the search query inputted by the user in the
 	 *                    {@link BooksActivity} Toolbar
 	 *                    {@link android.support.v7.widget.SearchView}
 	 * @return the built query {@link URL}
-	 * @see QueryUtils#encodeSearchQuery(String)
 	 */
-	static URL buildQueryUrl(String searchQuery) {
-		StringBuilder queryUrlStringBuilder = new StringBuilder();
-		queryUrlStringBuilder.append("https://www.googleapis.com/books/v1/volumes?q=")
-		                     .append(QueryUtils.encodeSearchQuery(searchQuery))
-		                     .append("&").append(maxResultsKey).append("=").append(maxResultsValue)
-		                     .append("&").append(orderByKey).append("=").append(orderByValue);
-		if (!langRestrictValue.equals("none")) {
-			queryUrlStringBuilder.append("&").append(langRestrictKey)
-			                     .append("=").append(langRestrictValue);
+	static URL buildQueryUrl(String searchQuery){
+		Uri.Builder uriBuilder = new Uri.Builder();
+		uriBuilder.scheme("https")
+	              .authority("www.googleapis.com")
+	              .appendPath("books").appendPath("v1").appendPath("volumes")
+	              .appendQueryParameter("q", searchQuery)
+	              .appendQueryParameter(maxResultsKey, maxResultsValue.toString())
+	              .appendQueryParameter(orderByKey,orderByValue);
+		if (!langRestrictValue.equals("none")){
+			uriBuilder.appendQueryParameter(langRestrictKey,langRestrictValue);
 		}
-		return QueryUtils.createUrl(queryUrlStringBuilder.toString());
-	}
-
-	/**
-	 * Encodes the search query inputted by the user (passed in by the caller method) for use in
-	 * a URL, substituting spaces for "+" signs, for example.
-	 *
-	 * @param searchQuery a String holding the original, unmodified search query inputted by the
-	 *                    user in the {@link BooksActivity} Toolbar
-	 *                    {@link android.support.v7.widget.SearchView}
-	 * @return the UTF-8 encoded search query String
-	 */
-	private static String encodeSearchQuery(String searchQuery) {
-		try {
-			searchQuery = URLEncoder.encode(searchQuery.toLowerCase(), "utf-8");
-		} catch (java.io.UnsupportedEncodingException e) {
-			Log.e(LOG_TAG, "Error encoding URL", e);
-		}
-		return searchQuery;
+		return createUrl(uriBuilder.toString());
 	}
 
 	/**
