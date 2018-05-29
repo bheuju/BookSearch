@@ -210,7 +210,7 @@ public class BooksActivity extends AppCompatActivity {
 	 * not) useful for flow control on Internet related functions.
 	 *
 	 * @return a boolean stating whether an active connection (or an impending,
-	 * "connecting") is available or not.
+	 * "connecting" one) is available or not.
 	 */
 	private boolean existsActiveNetworkConnection() {
 		ConnectivityManager cm = (ConnectivityManager)
