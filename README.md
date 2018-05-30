@@ -1,4 +1,5 @@
 # BookSearch
+A simple Android app for searching Google Books.  
 Project #7 for the Udacity Android Basics nanodegree.
 
 ### Features:
