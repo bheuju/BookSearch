@@ -9,10 +9,8 @@ Project #7 for the Udacity Android Basics nanodegree.
   * customizable preferences such as sorting order.
 
 ### Screenshots
-![Start screen]
-![Results list]
-![Preferences screen]
-
-[Start screen]: 
-[Results list]: 
-[Preferences screen]: 
+<p>
+<img src="/screenshots/start_message.jpg" height="400" width="240"/>
+<img src="/screenshots/search_results.jpg" height="400" width="240"/>
+<img src="/screenshots/preferences_screen.jpg" height="400" width="240"/>
+</p>
